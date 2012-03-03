@@ -1,7 +1,7 @@
 quite but not the contrary of cat
 
 EXAMPLE
-dog <string> <file> 
+dog <string|file> <file> 
 
 instead of echo "" > empty_file
-
+instead of echo "text" >> file_with_text
