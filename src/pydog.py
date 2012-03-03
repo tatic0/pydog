@@ -9,13 +9,14 @@ def main(text, ofile_name):
     if os.path.isfile(ofile_name):
         # open file to append
         file_mode = 'a'
+        print('file %s is already present on file system') %ofile_name
     else:
         #open file to write
+        print('creating file %s') %ofile_name
         file_mode = 'w'
     ofile = open(ofile_name, file_mode)
+    ofile.write(text)
     ofile.close()
-
-    print("I'll do lots of things")
 
 
 if __name__ == "__main__":
