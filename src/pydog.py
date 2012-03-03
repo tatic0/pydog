@@ -4,20 +4,28 @@
 
 import os, time, sys
 
-#sys.argv[1]
-if len(sys.argv) != 1:
-  dogfile = sys.argv[2]
-  ifile   = sys.argv[1] 
-  # check is file is present
-  if os.path.isfile(dogfile):
-    # open file to append
-    print()
-  else:
-    #open file to write
-    #dogfile = open(
-    print()
-  print("I'll do lots of things")
+def main(text, ofile_name):
+    # check is file is present
+    if os.path.isfile(ofile_name):
+        # open file to append
+        file_mode = 'a'
+    else:
+        #open file to write
+        file_mode = 'w'
+    ofile = open(ofile_name, file_mode)
+    ofile.close()
 
-else:
-  print("Usage:")
-  print("pydog.py <string|file> <file>")
+    print("I'll do lots of things")
+
+
+if __name__ == "__main__":
+    #sys.argv[1]
+    if len(sys.argv) > 2:
+        dogfile = sys.argv[2]
+        ifile   = sys.argv[1]
+    else:
+        print("Usage:")
+        print("pydog.py <string|file> <file>")
+        exit(1)
+
+    main(ifile, dogfile)
