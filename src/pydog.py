@@ -6,7 +6,12 @@ import os, time, sys
 
 def main(idata, ofile_name):
     # check if "idata" exists too, if not, assume it is a string
-    # check is file is present
+    if os.path.isfile(idata):
+        print("input is a file")
+        idata_file = open(idata, 'r')
+        idata = idata_file.read() 
+        # open file and put its contents on ofile
+    # check is output file is present
     if os.path.isfile(ofile_name):
         # open file to append
         file_mode = 'a'
