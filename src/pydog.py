@@ -4,7 +4,8 @@
 
 import os, time, sys
 
-def main(text, ofile_name):
+def main(idata, ofile_name):
+    # check if "idata" exists too, if not, assume it is a string
     # check is file is present
     if os.path.isfile(ofile_name):
         # open file to append
@@ -15,7 +16,7 @@ def main(text, ofile_name):
         print('creating file %s') %ofile_name
         file_mode = 'w'
     ofile = open(ofile_name, file_mode)
-    ofile.write(text)
+    ofile.write(idata)
     ofile.close()
 
 
