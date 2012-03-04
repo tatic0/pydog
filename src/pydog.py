@@ -9,8 +9,8 @@ def main(idata, ofile_name):
     if os.path.isfile(idata):
         print("input is a file")
         idata_file = open(idata, 'r')
-        idata = idata_file.read() 
-        # open file and put its contents on ofile
+        idata = idata_file.read()
+        idata_file.close() 
     # check is output file is present
     if os.path.isfile(ofile_name):
         # open file to append
@@ -20,6 +20,7 @@ def main(idata, ofile_name):
         #open file to write
         print('creating file %s') %ofile_name
         file_mode = 'w'
+    # open file and put its contents on ofile
     ofile = open(ofile_name, file_mode)
     ofile.write(idata)
     ofile.close()
