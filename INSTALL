@@ -1,0 +1,13 @@
+INSTALL
+
+By now there is not automagic install.
+Suggested install method is:
+
+* Get the code
+clone or download the code to, lets say:
+/home/user/python_stuff/pydog
+
+* Do a symbolic link
+ln -s /home/user/python/pydog/scr/pydog.py /usr/local/bin/
+
+
